@@ -19,8 +19,9 @@
 # image: node:latest
 
 stages:          # List of stages for jobs, and their order of execution
-  - install
-  - build
+  # - install
+  # - build
+  - test
 
 install-job:       # This job runs in the build stage, which runs first.
   stage: install
@@ -36,3 +37,9 @@ build-job:       # This job runs in the build stage, which runs first.
     - echo "Compiling the code... build"
     - npm run build
 
+
+test-job:      # This job runs in the test stage.
+  stage: test
+  script:
+    - echo "Running tests... test"
+    - copy  -r ./public/* ./dist
