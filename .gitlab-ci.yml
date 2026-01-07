@@ -44,3 +44,4 @@ test-job:      # This job runs in the test stage.
     - echo "Running tests... test"
     - mkdir -p ./dist
     - cp -r ./public/* ./dist
+    - ls
