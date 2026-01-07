@@ -23,23 +23,24 @@ stages:          # List of stages for jobs, and their order of execution
   # - build
   - test
 
-install-job:       # This job runs in the build stage, which runs first.
-  stage: install
-  script:
-    - echo "Compiling the code... install"
-    - npm install --lockfile
+# install-job:       # This job runs in the build stage, which runs first.
+#   stage: install
+#   script:
+#     - echo "Compiling the code... install"
+#     - npm install --lockfile
 
 
-build-job:       # This job runs in the build stage, which runs first.
-  stage: build
-  environment: production
-  script:
-    - echo "Compiling the code... build"
-    - npm run build
+# build-job:       # This job runs in the build stage, which runs first.
+#   stage: build
+#   environment: production
+#   script:
+#     - echo "Compiling the code... build"
+#     - npm run build
 
 
 test-job:      # This job runs in the test stage.
   stage: test
   script:
     - echo "Running tests... test"
-    - copy  -r ./public/* ./dist
+    - mkdir -p ./dist
+    - cp -r ./public/* ./dist
