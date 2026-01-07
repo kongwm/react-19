@@ -16,7 +16,7 @@
 # This specific template is located at:
 # https://gitlab.com/gitlab-org/gitlab/-/blob/master/lib/gitlab/ci/templates/Getting-Started.gitlab-ci.yml
 
-image: "micr.cloud.mioffice.cn/common-18299/node:20.19.3"
+image: node:20.19.0-slim
 
 stages:          # List of stages for jobs, and their order of execution
   - install
@@ -25,7 +25,7 @@ stages:          # List of stages for jobs, and their order of execution
 install-job:       # This job runs in the build stage, which runs first.
   stage: install
   script:
-    - echo "Compiling the code... v"
+    - echo "Compiling the code... install"
     - npm install --lockfile
 
 
