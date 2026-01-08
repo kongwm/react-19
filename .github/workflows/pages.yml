@@ -22,7 +22,7 @@ jobs:
         run: npm install -g npm@latest
       
       - name: Git set
-        run: git config --global user.email "react-19@qq.com" && git config --global user.name "react-19"
+        run: git config --global user.email "506404252@qq.com" && git config --global user.name "kongwm"
 
       - name: Clean install
         run: |
