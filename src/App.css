@@ -65,6 +65,11 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
 }
 
+h1 {
+  font-size: 24px;
+  margin-top: 50px;
+}
+
 a {
   color: var(--color-primary-600);
   text-decoration: none;
@@ -76,9 +81,6 @@ a {
 }
 
 button {
-  border: none;
-  background: none;
-  padding: 0;
   cursor: pointer;
 }
 

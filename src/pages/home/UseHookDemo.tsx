@@ -32,18 +32,6 @@ const fetchUser = (id: number): Promise<User> => {
   });
 };
 
-const fetchPosts = (userId: number) => {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve([
-        { id: 1, title: 'React 19 新特性', likes: 42 },
-        { id: 2, title: 'use() Hook 详解', likes: 38 },
-        { id: 3, title: 'Suspense 最佳实践', likes: 51 },
-      ]);
-    }, 1000);
-  });
-};
-
 function PromiseDemo({ promise }: { promise: Promise<User> }) {
   console.log(promise);
 
@@ -53,8 +41,9 @@ function PromiseDemo({ promise }: { promise: Promise<User> }) {
     <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
       新写法（use + Suspense） 等 Promise resolve 后，自动渲染； 抛给{' '}
       {`<Suspense />`} 显示 loading；reject 抛给 {`<ErrorBoundary />`}
-      <pre className="mt-4 p-4 bg-gray-50 rounded-lg">
-        <code>{`代码示例：
+      <div className="mt-4 p-3 bg-gray-50 rounded-lg">
+        <pre className="text-xs text-gray-700 overflow-x-auto">
+          <code>{`代码示例：
 
 // ✅ 使用 use() 读取 Promise
 function UserDisplay({ promise }) {
@@ -66,11 +55,13 @@ function UserDisplay({ promise }) {
 <Suspense fallback={<Loading />}>
   <UserDisplay promise={userPromise} />
 </Suspense>`}</code>
-      </pre>
+        </pre>
+      </div>
       <div>{data.id}</div>
-      <pre>
-        <code>
-          {`代码示例：
+      <div className="mt-4 p-3 bg-gray-50 rounded-lg">
+        <pre className="text-xs text-gray-700 overflow-x-auto">
+          <code>
+            {`代码示例：
 
 // ✅ use() 可以在条件语句中使用
 function Component({ promise, showData }) {
@@ -87,8 +78,9 @@ function OldWay({ showData }) {
     const data = useState(); // ❌ 错误！
   }
 }`}
-        </code>
-      </pre>
+          </code>
+        </pre>
+      </div>
     </div>
   );
 }
@@ -97,10 +89,12 @@ function ContextDemo() {
   const theme = use(ThemeContext);
   return (
     <>
-      <pre className="mt-4 p-4 bg-gray-50 rounded-lg">
-        <code>{`const theme = use(ThemeContext);
+      <div className="mt-4 p-3 bg-gray-50 rounded-lg">
+        <pre className="text-xs text-gray-700 overflow-x-auto">
+          <code>{`const theme = use(ThemeContext);
   return <p>当前主题: {theme}</p>;`}</code>
-      </pre>
+        </pre>
+      </div>
       <p>当前主题: {theme}</p>
     </>
   );
@@ -158,7 +152,7 @@ function UseHookDemo() {
         type="button"
         onClick={fetchData}
         disabled={loading}
-        className="px-4 py-2 bg-green-600  rounded-lg font-medium hover:bg-green-700 transition-all disabled:opacity-50 flex items-center gap-2"
+        className="px-4 py-2 bg-green-600 text-white  rounded-lg font-medium hover:bg-green-700 transition-all disabled:opacity-50 flex items-center gap-2"
       >
         <RefreshCw className={`w-4 h-4 ${loading ? 'animate-spin' : ''}`} />
         {loading ? '加载中...' : '触发数据加载'}
@@ -176,9 +170,8 @@ function UseHookDemo() {
           <p className="text-green-700 font-medium mb-2">{data.message}</p>
           <p className="text-sm text-green-600 mb-3">时间: {data.timestamp}</p>
           <div className="space-y-1">
-            {data.items.map((item, index) => (
-              // biome-ignore lint/suspicious/noArrayIndexKey: <index>
-              <div key={index} className="flex items-center gap-2">
+            {data.items.map((item) => (
+              <div key={item} className="flex items-center gap-2">
                 <CheckCircle className="w-4 h-4 text-green-600" />
                 <span className="text-gray-700">{item}</span>
               </div>

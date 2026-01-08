@@ -16,7 +16,11 @@ function SubmitButton() {
   console.log(pending, data, method);
 
   return (
-    <button type="submit" disabled={pending}>
+    <button
+      type="submit"
+      disabled={pending}
+      className="w-[80px] p-4 px-4 py-2 mt-2 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all flex items-center justify-center"
+    >
       {pending ? '提交中...' : '提交'}
     </button>
   );
@@ -41,6 +45,7 @@ function MyForm() {
   return (
     <form action={handleSubmit}>
       <input name="username" className="border-1" />
+      <br />
       <SubmitButton /> {/* 自动获取表单状态 */}
     </form>
   );

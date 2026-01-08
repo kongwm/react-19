@@ -39,9 +39,15 @@ function RefAsPropDemo() {
         4. ref 作为 prop - 简化的 ref 转发
       </h3>
 
-      <pre>
-        <code>{`const CustomInput = (inputRef, ...props) => { return <input ref={inputRef} /> }`}</code>
-      </pre>
+      <div className="mt-4 p-3 bg-gray-50 rounded-lg">
+        <pre className="text-xs text-gray-700 overflow-x-auto">
+          <code>
+            {`const CustomInput = (inputRef, ...props) => { 
+  return <input ref={inputRef} /> 
+}`}
+          </code>
+        </pre>
+      </div>
 
       <div className="space-y-4">
         <CustomInput
@@ -53,7 +59,7 @@ function RefAsPropDemo() {
         <button
           type="button"
           onClick={focusInput}
-          className="px-4 py-2 bg-orange-600 rounded-lg font-medium hover:bg-orange-700 transition-all"
+          className="px-4 py-2 bg-orange-600 text-white  rounded-lg font-medium hover:bg-orange-700 transition-all"
         >
           聚焦输入框
         </button>

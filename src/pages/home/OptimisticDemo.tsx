@@ -12,7 +12,7 @@ type Func = (data: ResData['data'], delay: number) => Promise<ResData>;
 
 // 模拟 API 调用
 const simulateAPI: Func = (data: ResData['data'], delay = 2000) => {
-  return new Promise((resolve, reject) => {
+  return new Promise((_resolve, reject) => {
     setTimeout(() => {
       reject({ success: true, data });
     }, delay);
@@ -47,7 +47,9 @@ function OptimisticDemo() {
             todo.id === id ? { ...todo, completed: !todo.completed } : todo,
           ),
         );
-      } catch (error) {}
+      } catch (error) {
+        console.log(error);
+      }
     });
   };
 
@@ -101,7 +103,7 @@ function OptimisticDemo() {
       <button
         type="button"
         onClick={addTodo}
-        className="px-4 py-2 bg-purple-600  rounded-lg font-medium hover:bg-purple-700 transition-all"
+        className="px-4 py-2 bg-purple-600 text-white  rounded-lg font-medium hover:bg-purple-700 transition-all"
       >
         添加新任务
       </button>
