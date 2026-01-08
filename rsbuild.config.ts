@@ -9,6 +9,9 @@ const ReactCompilerConfig = {
 
 // Docs: https://rsbuild.rs/config/
 export default defineConfig({
+  output: {
+    assetPrefix: '/react-19/',
+  },
   plugins: [
     pluginReact(),
     pluginBabel({
@@ -24,5 +27,6 @@ export default defineConfig({
 
   server: {
     port: 8000,
+    base: '/react-19/',
   },
 });

@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
+  "homepage": "https://kongwm.github.io/react-19/",
   "scripts": {
     "build": "rsbuild build",
     "check": "biome check --write",
@@ -11,7 +12,9 @@
     "preview": "rsbuild preview",
     "test": "rstest",
     "test:watch": "rstest --watch",
-    "prepare": "husky"
+    "prepare": "husky",
+    "deploy": "gh-pages -d dist",
+    "pages": "npm run build && cp dist/index.html dist/404.html && npm run deploy"
   },
   "dependencies": {
     "lucide-react": "^0.562.0",
@@ -35,6 +38,8 @@
     "@types/react-dom": "^19.2.3",
     "autoprefixer": "^10.4.23",
     "babel-plugin-react-compiler": "^1.0.0",
+    "cssnano": "^7.1.2",
+    "gh-pages": "^6.3.0",
     "husky": "^9.1.7",
     "jsdom": "^27.3.0",
     "lint-staged": "^15.5.2",

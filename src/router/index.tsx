@@ -16,12 +16,17 @@ import Home from '../pages/home';
 //   }
 // }
 
-const router = createBrowserRouter([
+const router = createBrowserRouter(
+  [
+    {
+      path: '/',
+      // middleware: [authMiddleware],
+      element: <Home />,
+    },
+  ],
   {
-    path: '/',
-    // middleware: [authMiddleware],
-    element: <Home />,
+    basename: '/react-19',
   },
-]);
+);
 
 export default router;
