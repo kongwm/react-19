@@ -5,7 +5,7 @@
 Install the dependencies:
 
 ```bash
-npm install
+npm install --registry=https://registry.npmmirror.com
 ```
 
 ## Get started
