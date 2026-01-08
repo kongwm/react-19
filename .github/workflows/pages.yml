@@ -26,9 +26,11 @@ jobs:
       - name: Update npm
         run: npm install -g npm@latest
 
+      - name: delate package-lock.json
+        run: rm package-lock.json
+
       - name: Clean install
         run: |
-          rm -rf node_modules package-lock.json
           npm install --registry=https://registry.npmmirror.com
 
       - name: Run pages build
