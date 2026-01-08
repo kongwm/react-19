@@ -7,7 +7,7 @@ import UseHookDemo from './UseHookDemo';
 const Home = () => {
   return (
     <div className="page">
-      <title>Home</title>
+      <title>Home - 1</title>
       <meta name="description" content="React Demo Home" />
       <h1>React 编译器</h1>
       <section className="m-4 p-1">
