@@ -20,6 +20,9 @@ jobs:
 
       - name: Update npm
         run: npm install -g npm@latest
+      
+      - name: Git set
+        run: git config --global user.email "react-19@qq.com" && git config --global user.name "react-19"
 
       - name: Clean install
         run: |
