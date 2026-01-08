@@ -1,4 +1,6 @@
-# Rsbuild project
+# react-19
+
+## homepage
 
 ## Setup
 
@@ -10,7 +12,7 @@ npm install --registry=https://registry.npmmirror.com
 
 ## Get started
 
-Start the dev server, and the app will be available at [http://localhost:3000](http://localhost:3000).
+Start the dev server, and the app will be available at [http://localhost:8000](http://localhost:8000).
 
 ```bash
 npm run dev
@@ -36,4 +38,8 @@ To learn more about Rsbuild, check out the following resources:
 - [Rsbuild GitHub repository](https://github.com/web-infra-dev/rsbuild) - your feedback and contributions are welcome!
 
 
-## huskey
+## gh-pages
+
+```bash
+npm run pages
+```
