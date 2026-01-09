@@ -1,4 +1,5 @@
 import ActionsDemo from './ActionsDemo';
+import Compiler from './Compiler';
 import OptimisticDemo from './OptimisticDemo';
 import RefAsPropDemo from './RefAsPropsDemo';
 import MyForm from './UseFormStatus';
@@ -9,8 +10,9 @@ const Home = () => {
     <div className="page">
       <title>Home - 1</title>
       <meta name="description" content="React Demo Home" />
-      <h1>React 编译器</h1>
-      <section className="m-4 p-1">
+      <h1>React-19</h1>
+      <h2>React 编译器</h2>
+      <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
         <ul>
           <li>
             学习 React 编译器的作用
@@ -18,17 +20,18 @@ const Home = () => {
             应用，从而无需再手动使用 useMemo，useCallback，和 React.memo。
           </li>
         </ul>
-      </section>
-      <h1>useFormStatus</h1>
-      <MyForm />
-      <h1>Ref</h1>
-      <RefAsPropDemo />
-      <h1>UseHookDemo</h1>
-      <UseHookDemo />
-      <h1>OptimisticDemo</h1>
-      <OptimisticDemo />
-      <h1>Actions (异步操作)</h1>
+        <Compiler />
+      </div>
+      <h2>Actions (异步操作)</h2>
       <ActionsDemo />
+      <h2>OptimisticDemo</h2>
+      <OptimisticDemo />
+      <h2>UseHookDemo</h2>
+      <UseHookDemo />
+      <h2>Ref</h2>
+      <RefAsPropDemo />
+      <h2>useFormStatus</h2>
+      <MyForm />
     </div>
   );
 };

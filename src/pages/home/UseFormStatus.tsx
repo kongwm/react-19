@@ -43,11 +43,16 @@ function MyForm() {
   };
 
   return (
-    <form action={handleSubmit}>
-      <input name="username" className="border-1" />
-      <br />
-      <SubmitButton /> {/* 自动获取表单状态 */}
-    </form>
+    <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+      <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
+        5. useFormStatus
+      </h3>
+      <form action={handleSubmit}>
+        <input name="username" className="border-1" />
+        <br />
+        <SubmitButton /> {/* 自动获取表单状态 */}
+      </form>
+    </div>
   );
 }
 
